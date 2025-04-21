@@ -1,0 +1,144 @@
+body {
+  font-family: 'Jost', sans-serif;
+  background-color: #F5F5F5;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  height: 100vh;
+}
+
+.dashboard-container {
+  display: flex;
+  height: 100%;
+}
+
+.sidebar {
+  width: 220px;
+  background-color: #1F2A44;
+  color: #FFFFFF;
+  display: flex;
+  flex-direction: column;
+  padding: 30px 20px;
+  box-shadow: 2px 0 10px rgba(0,0,0,0.2);
+}
+
+.sidebar .logo {
+  font-size: 1.5rem;
+  color: #FCA311;
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.nav-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  flex: 1;
+}
+
+.nav-links li {
+  margin-bottom: 20px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #FFFFFF;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: #FCA311;
+}
+
+.dashboard-content {
+  flex: 1;
+  padding: 30px;
+  background-color: #FFFFFF;
+  overflow-y: auto;
+}
+
+.dashboard-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.dashboard-header h1 {
+  font-size: 2rem;
+  color: #14213D;
+}
+
+.dashboard-header p {
+  font-size: 1.1rem;
+  color: #707070;
+}
+
+.dashboard-cards {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 30px;
+}
+
+.dash-card {
+  background-color: #FCA311;
+  width: 30%;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.dash-card:hover {
+  transform: translateY(-10px);
+}
+
+.dash-card h3 {
+  font-size: 1.3rem;
+  margin-bottom: 15px;
+}
+
+.dash-card p {
+  font-size: 1rem;
+  margin-bottom: 20px;
+}
+
+button {
+  background-color: #14213D;
+  color: #FFF;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+button:hover {
+  background-color: #0d3b53;
+}
+
+.statistics {
+  display: flex;
+  justify-content: space-between;
+}
+
+.stat-card {
+  background-color: #14213D;
+  color: #FFFFFF;
+  width: 30%;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.stat-card h4 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+.stat-value {
+  font-size: 2rem;
+  font-weight: bold;
+}

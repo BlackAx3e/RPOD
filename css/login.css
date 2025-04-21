@@ -1,0 +1,91 @@
+/* login.css */
+body {
+  font-family: 'Jost', sans-serif;
+  background-color: #14213D; /* Background blu scuro */
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden; /* Evita che il cursore esca dal viewport */
+}
+
+.login-card {
+  background-color: #FCA311; /* Card di login gialla */
+  width: 100%;
+  max-width: 350px; /* Card più compatta */
+  padding: 25px;
+  border-radius: 20px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2); /* Ombra per effetto fluttuante */
+  transform: perspective(1000px) rotateX(5deg) rotateY(5deg);
+  transition: all 0.3s ease-in-out;
+  animation: floatAnimation 3s ease-in-out infinite;
+  box-sizing: border-box; /* Assicura che il padding venga incluso nelle dimensioni totali della card */
+}
+
+@keyframes floatAnimation {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0); }
+}
+
+.login-card:hover {
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
+}
+
+.form-group {
+  margin-bottom: 15px; /* Ridotto lo spazio tra gli input */
+}
+
+label {
+  font-weight: 600;
+  color: #14213D;
+  margin-bottom: 5px;
+  display: block;
+}
+
+input {
+  width: 100%;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  margin-top: 5px;
+  box-sizing: border-box; /* Assicura che il padding venga incluso nelle dimensioni totali dell'input */
+}
+
+button {
+  background-color: #14213D;
+  color: #fff;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  width: 100%;
+  cursor: pointer;
+  font-size: 1.1rem;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #0d3b53; /* Colore scuro per il pulsante al passaggio del mouse */
+}
+
+.register-link {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.register-link p {
+  margin: 0;
+}
+
+.register-link a {
+  color: #0d3b53;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.register-link a:hover {
+  text-decoration: underline;
+}

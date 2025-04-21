@@ -1,0 +1,136 @@
+@import url('https://fonts.googleapis.com/css2?family=Jost:wght@400;600&display=swap');
+*{margin:0;padding:0;box-sizing:border-box;}
+html,body{height:100%;width:100%;font-family:'Jost',sans-serif;}
+body{background:#FCA311;color:#000;display:flex;flex-direction:column;align-items:center;}
+.hero{width:100%;padding-top:4rem;text-align:center;}
+.hero h1{font-size:4rem;}
+main{width:90%;max-width:800px;text-align:center;padding:2rem 0;}
+main h2{font-size:2.5rem;font-weight:600;margin-bottom:1.5rem;}
+main ul{list-style:disc inside;font-size:1.25rem;line-height:1.6;text-align:left;max-width:600px;margin:0 auto 2rem;}
+.features{display:flex;justify-content:space-between;gap:1rem;margin-bottom:2rem;}
+.features .card{flex:1;background:#fff;padding:1.5rem;border-radius:15px;box-shadow:0 ۴px ۱۰px rgba(0,0,0,0.1);}
+.features .card h3{font-size:1.5rem;margin-bottom:0.5rem;}
+.features .card p{font-size:1rem;}
+.testimonials{margin-bottom:2rem;}
+.testimonials h2{font-size:2rem;margin-bottom:1rem;}
+.slider{display:flex;gap:1rem;overflow-x:auto;padding-bottom:1rem;}
+.review{background:#fff;padding:1.5rem;border-radius:10px;min-width:280px;box-shadow:0 ۴px ۱۰px rgba(0,0,0,0.1);}
+.review p{font-size:1rem;margin-bottom:0.5rem;color:#14213D;}
+.review span{font-size:0.9rem;color:#555;}
+
+/* Nuova sezione newsletter */
+.newsletter{background: linear-gradient(135deg, rgba(20,33,61,0.8), rgba(20,33,61,1));padding:3rem 1rem;border-radius:20px;margin-bottom:2rem;}
+.newsletter-content{max-width:600px;margin:0 auto;color:#fff;animation: fadeInUp 1s ease both;}
+.newsletter-content h2{font-size:2.5rem;margin-bottom:0.5rem;}
+.newsletter-content p{font-size:1.1rem;margin-bottom:1.5rem;}
+.newsletter form{display:flex;justify-content:center;gap:0.5rem;position:relative;}
+.input-wrapper{position:relative;flex:1;}
+.input-wrapper input{width:100%;padding:1rem;border:none;border-radius:30px;background:#fff;font-size:1rem;}
+.input-wrapper .floating-label{position:absolute;top:50%;left:1.2rem;transform:translateY(-50%);pointer-events:none;color:#888;transition:all .3s;}
+.input-wrapper input:focus + .floating-label,
+.input-wrapper input:not(:placeholder-shown) + .floating-label{
+  top:-0.6rem;left:1rem;font-size:0.8rem;color:#FCA311;}
+
+@keyframes fadeInUp{
+  from{opacity:0;transform:translateY(20px);} to{opacity:1;transform:translateY(0);} }
+
+#actionBtn{padding:1.5rem 3rem;border:none;border-radius:20px;background:#14213D;color:#fff;font-size:1.25rem;font-weight:600;cursor:pointer;transition:transform .2s;margin-bottom:2rem;margin-top:1rem;}
+#actionBtn:hover{transform:scale(1.05);}
+footer{width:100%;padding:1rem 0;background:rgba(0,0,0,0.1);display:flex;justify-content:space-around;}
+footer .links a,footer .social a{color:#000;margin:0 .5rem;text-decoration:none;font-size:1rem;}
+
+.styled-input {
+  padding: 1rem 1.5rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.2rem;
+  width: 100%;
+  max-width: 400px;
+  margin-bottom: 1rem;
+  box-shadow: 0 0 5px rgba(0,0,0,0.2);
+}
+
+.btn-newsletter {
+  background-color: #FCA311;
+  color: #000;
+  font-weight: bold;
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 20px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  margin-bottom: 15px;
+}
+
+.btn-newsletter:hover {
+  transform: scale(1.1);
+}
+
+.fade-in {
+  animation: fadeIn 1s ease forwards;
+}
+
+.fade-in-delay {
+  animation: fadeIn 1.5s ease forwards;
+}
+
+.slide-up {
+  animation: slideUp 1s ease forwards;
+}
+
+.zoom-in {
+  animation: zoomIn 1s ease forwards;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; } to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes zoomIn {
+  from { opacity: 0; transform: scale(0.8); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+.fade-in {
+  animation: fadeIn 1s ease forwards;
+}
+
+.fade-in-delay {
+  animation: fadeIn 1.5s ease forwards;
+}
+
+.slide-up {
+  animation: slideUp 1s ease forwards;
+}
+
+.zoom-in {
+  animation: zoomIn 1s ease forwards;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; } to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes zoomIn {
+  from { opacity: 0; transform: scale(0.8); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+.hover-zoom {
+  transition: transform 0.3s ease;
+}
+
+.hover-zoom:hover {
+  transform: scale(1.05);
+}
