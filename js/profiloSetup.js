@@ -25,11 +25,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const nome = formData.get('nome');
     const profession = formData.get('profession');
     const bio = formData.get('bio');
-    const priceRange = formData.get('priceRange');
     const file = formData.get('profilePicture');
 
     // Validazione campi
-    if (!nome || !profession || !bio || !priceRange) {
+    if (!nome || !profession || !bio) {
       alert('Per favore, compila tutti i campi.');
       return;
     }
@@ -45,7 +44,6 @@ document.addEventListener('DOMContentLoaded', () => {
       user.nome = nome;
       user.profession = profession;
       user.bio = bio;
-      user.priceRange = priceRange;
       user.profilePicture = reader.result;
       user.profileCreated = true;
 
