@@ -1,23 +1,17 @@
-// Toggle sidebar on mobile
+// Toggle overlay menu on mobile
 const toggleBtn = document.getElementById('toggleBtn');
-const sidebar = document.querySelector('.sidebar');
+const overlayMenu = document.getElementById('overlayMenu');
+const closeBtn = document.getElementById('closeBtn');
 
 toggleBtn.addEventListener('click', () => {
-  sidebar.classList.toggle('open');
+  overlayMenu.classList.add('open');
+});
+closeBtn.addEventListener('click', () => {
+  overlayMenu.classList.remove('open');
 });
 
-// Placeholder per dinamiche future
-// Esempio: aggiornamento dati delle card via fetch API
-/*
-fetch('/api/stats')
-  .then(res => res.json())
-  .then(data => {
-    document.querySelector('.card .value').textContent = data.earnings;
-    // ... altra logica
-  })
-  .catch(err => console.error(err));
-*/
-document.addEventListener("DOMContentLoaded", function () {
+// Caricamento dati utente da localStorage
+document.addEventListener('DOMContentLoaded', function () {
   const user = JSON.parse(localStorage.getItem("user"));
 
   if (!user || !user.profileCreated) {

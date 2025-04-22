@@ -21,7 +21,22 @@ body {
   font-size: 1.5rem;
   text-align: center;
   padding: 1.5rem 0;
-  border-bottom: 1px solid #f4f4f4;
+}
+.user-info {
+  text-align: center;
+  padding: 20px;
+}
+.user-info img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 10px;
+  border: 2px solid #FCA311;
+}
+.user-info h2,
+.user-info p {
+  color: #fff;
 }
 .sidebar nav ul {
   list-style: none;
@@ -109,32 +124,73 @@ header h1 {
 .project-card p {
   color: #555;
 }
+
+/* Hide overlay-menu by default */
+.overlay-menu {
+  display: none;
+}
+
+/* Mobile Responsive */
 @media (max-width: 768px) {
-  .sidebar {
-    position: absolute;
-    left: -250px;
-    transition: left 0.3s;
-    z-index: 1000;
-  }
-  .sidebar.open {
-    left: 0;
+  body {
+    display: block;
   }
   .toggle-btn {
     display: block;
   }
-}
-
-.user-info {
-  text-align: center;
-  padding: 20px;
-  color: #fff;
-}
-
-.user-info img {
-  width: 80px;
-  height: 80px;
-  border-radius: 50%;
-  object-fit: cover;
-  margin-bottom: 10px;
-  border: 2px solid #FCA311;
+  .sidebar {
+    display: none;
+  }
+  .overlay-menu {
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(20, 33, 61, 0.95);
+    z-index: 999;
+    transform: translateY(-100%);
+    transition: transform 0.3s ease;
+    flex-direction: column;
+  }
+  .overlay-menu.open {
+    transform: translateY(0);
+  }
+  .overlay-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+  }
+  .overlay-header .close-btn {
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #fff;
+  }
+  .overlay-logo {
+    color: #FCA311;
+    font-size: 1.5rem;
+  }
+  .overlay-menu nav ul {
+    list-style: none;
+    margin-top: 2rem;
+    text-align: center;
+  }
+  .overlay-menu nav ul li {
+    margin: 1.5rem 0;
+  }
+  .overlay-menu nav ul li a {
+    color: #fff;
+    font-size: 1.25rem;
+    text-decoration: none;
+  }
+  .stats-cards {
+    display: flex;
+    flex-direction: column;
+  }
+  .project-list {
+    display: flex;
+    flex-direction: column;
+  }
 }
