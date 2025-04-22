@@ -1,20 +1,31 @@
-window.onload = function() {
-  const user = JSON.parse(localStorage.getItem("user"));
-  if (user && user.profileCreated) {
-    // Mostra i dati del profilo
-    document.getElementById("username").textContent = user.nome || "Professionista";
-    document.getElementById("nome").textContent = user.nome || "Nome non impostato";
-    document.getElementById("profession").textContent = user.profession || "Professione non impostata";
-    document.getElementById("bio").textContent = user.bio || "Bio non impostata";
-    // Puoi aggiungere la foto del profilo, se presente
-    document.getElementById("profilePicture").src = user.profilePicture || "";
-  }
-};
+// Toggle sidebar on mobile
+const toggleBtn = document.getElementById('toggleBtn');
+const sidebar = document.querySelector('.sidebar');
 
-// Funzione per il logout
-document.getElementById("logout").addEventListener("click", function() {
-  // Rimuovi i dati dell'utente dal localStorage
-  localStorage.removeItem("user");
-  // Redirigi alla pagina di login
-  window.location.href = "login.html";
+toggleBtn.addEventListener('click', () => {
+  sidebar.classList.toggle('open');
+});
+
+// Placeholder per dinamiche future
+// Esempio: aggiornamento dati delle card via fetch API
+/*
+fetch('/api/stats')
+  .then(res => res.json())
+  .then(data => {
+    document.querySelector('.card .value').textContent = data.earnings;
+    // ... altra logica
+  })
+  .catch(err => console.error(err));
+*/
+document.addEventListener("DOMContentLoaded", function () {
+  const user = JSON.parse(localStorage.getItem("user"));
+
+  if (!user || !user.profileCreated) {
+    window.location.href = "login.html";
+    return;
+  }
+
+  document.getElementById("user-avatar").src = user.profilePicture;
+  document.getElementById("user-name").textContent = user.nome;
+  document.getElementById("user-bio").textContent = user.bio;
 });

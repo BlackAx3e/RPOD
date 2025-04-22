@@ -1,144 +1,140 @@
-body {
-  font-family: 'Jost', sans-serif;
-  background-color: #F5F5F5;
+/* Palette: #14213D (blu scuro) e #FCA311 (giallo dorato) */
+* {
   margin: 0;
   padding: 0;
-  display: flex;
-  justify-content: flex-start;
-  align-items: flex-start;
-  height: 100vh;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
-
-.dashboard-container {
+body {
   display: flex;
-  height: 100%;
+  min-height: 100vh;
+  background: #f4f4f4;
 }
-
 .sidebar {
-  width: 220px;
-  background-color: #1F2A44;
-  color: #FFFFFF;
+  width: 250px;
+  background: #14213D;
+  color: #fff;
   display: flex;
   flex-direction: column;
-  padding: 30px 20px;
-  box-shadow: 2px 0 10px rgba(0,0,0,0.2);
 }
-
 .sidebar .logo {
   font-size: 1.5rem;
-  color: #FCA311;
-  margin-bottom: 40px;
   text-align: center;
+  padding: 1.5rem 0;
+  border-bottom: 1px solid #f4f4f4;
 }
-
-.nav-links {
+.sidebar nav ul {
   list-style: none;
-  padding: 0;
-  margin: 0;
-  flex: 1;
+  padding: 1rem 0;
 }
-
-.nav-links li {
-  margin-bottom: 20px;
+.sidebar nav ul li {
+  margin: 1rem 0;
 }
-
-.nav-links a {
+.sidebar nav ul li a {
+  color: #fff;
   text-decoration: none;
-  color: #FFFFFF;
-  font-weight: bold;
-  transition: color 0.3s ease;
+  padding: 0.75rem 1.5rem;
+  display: block;
+  transition: background 0.3s;
 }
-
-.nav-links a:hover {
-  color: #FCA311;
-}
-
-.dashboard-content {
-  flex: 1;
-  padding: 30px;
-  background-color: #FFFFFF;
-  overflow-y: auto;
-}
-
-.dashboard-header {
-  text-align: center;
-  margin-bottom: 40px;
-}
-
-.dashboard-header h1 {
-  font-size: 2rem;
+.sidebar nav ul li.active a,
+.sidebar nav ul li a:hover {
+  background: #FCA311;
   color: #14213D;
 }
-
-.dashboard-header p {
-  font-size: 1.1rem;
-  color: #707070;
+.main {
+  flex: 1;
+  padding: 2rem;
 }
-
-.dashboard-cards {
+header {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 30px;
+  align-items: center;
+  margin-bottom: 2rem;
 }
-
-.dash-card {
-  background-color: #FCA311;
-  width: 30%;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-  text-align: center;
-  transition: transform 0.3s ease;
-}
-
-.dash-card:hover {
-  transform: translateY(-10px);
-}
-
-.dash-card h3 {
-  font-size: 1.3rem;
-  margin-bottom: 15px;
-}
-
-.dash-card p {
-  font-size: 1rem;
-  margin-bottom: 20px;
-}
-
-button {
-  background-color: #14213D;
-  color: #FFF;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 8px;
+.toggle-btn {
+  font-size: 1.5rem;
   cursor: pointer;
-  font-size: 1rem;
+  display: none;
 }
-
-button:hover {
-  background-color: #0d3b53;
+header h1 {
+  font-size: 1.75rem;
+  color: #14213D;
 }
-
-.statistics {
+.username {
+  color: #FCA311;
+}
+.profile img {
+  border-radius: 50%;
+}
+.stats-cards {
   display: flex;
-  justify-content: space-between;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+.card {
+  flex: 1;
+  background: #fff;
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+.card h3 {
+  margin-bottom: 0.5rem;
+  color: #14213D;
+}
+.card .value {
+  font-size: 1.5rem;
+  color: #FCA311;
+}
+.projects h2 {
+  margin-bottom: 1rem;
+  color: #14213D;
+}
+.project-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill,minmax(200px,1fr));
+  gap: 1rem;
+}
+.project-card {
+  background: #fff;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+.project-card h4 {
+  margin-bottom: 0.5rem;
+  color: #14213D;
+}
+.project-card p {
+  color: #555;
+}
+@media (max-width: 768px) {
+  .sidebar {
+    position: absolute;
+    left: -250px;
+    transition: left 0.3s;
+    z-index: 1000;
+  }
+  .sidebar.open {
+    left: 0;
+  }
+  .toggle-btn {
+    display: block;
+  }
 }
 
-.stat-card {
-  background-color: #14213D;
-  color: #FFFFFF;
-  width: 30%;
-  padding: 20px;
-  border-radius: 10px;
+.user-info {
   text-align: center;
+  padding: 20px;
+  color: #fff;
 }
 
-.stat-card h4 {
-  font-size: 1.2rem;
+.user-info img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
   margin-bottom: 10px;
-}
-
-.stat-value {
-  font-size: 2rem;
-  font-weight: bold;
+  border: 2px solid #FCA311;
 }

@@ -1,70 +1,65 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Dashboard - RPOD</title>
-  <link rel="stylesheet" href="../css/dashboard.css"/>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dashboard Professionista</title>
+  <link rel="stylesheet" href="../css/dashboard.css" />
+  <script defer src="../js/dashboard.js"></script>
 </head>
 <body>
-  <div class="dashboard-container">
-    <!-- Sidebar -->
-    <nav class="sidebar">
-      <h2 class="logo">RPOD</h2>
-      <ul class="nav-links">
+  <div class="sidebar">
+    <div class="user-info">
+		<img id="user-avatar" src="" alt="Foto profilo">
+		<h2 id="user-name"></h2>
+		<p id="user-bio"></p>
+	</div>
+    <nav>
+      <ul>
         <li class="active"><a href="#">Dashboard</a></li>
+        <li><a href="#">I miei progetti</a></li>
         <li><a href="#">Messaggi</a></li>
-        <li><a href="#">Prenotazioni</a></li>
-        <li><a href="#">Portafoglio</a></li>
+        <li><a href="#">Statistiche</a></li>
         <li><a href="#">Impostazioni</a></li>
-        <li><a href="#" id="logout">Logout</a></li>
       </ul>
     </nav>
-
-    <!-- Main Content -->
-    <div class="dashboard-content">
-      <header class="dashboard-header">
-        <h1>Ciao, <span id="username">Professionista</span> 👋</h1>
-        <p>Benvenuto nella tua dashboard personale!</p>
-      </header>
-
-      <main class="dashboard-main">
-        <section class="dashboard-cards">
-          <div class="dash-card">
-            <h3>Profilo</h3>
-            <p>Modifica il tuo profilo e aggiorna le informazioni.</p>
-            <button onclick="window.location.href = 'profiloSetup.html';">Modifica profilo</button>
-          </div>
-          <div class="dash-card">
-            <h3>Messaggi</h3>
-            <p>Controlla le tue comunicazioni e rispondi ai clienti.</p>
-            <button onclick="window.location.href = '#';">Vai ai messaggi</button>
-          </div>
-          <div class="dash-card">
-            <h3>Statistiche</h3>
-            <p>Monitora il tuo punteggio di successo e altri dati di performance.</p>
-            <button onclick="window.location.href = '#';">Visualizza statistiche</button>
-          </div>
-        </section>
-
-        <section class="statistics">
-          <div class="stat-card">
-            <h4>Punteggio di Successo</h4>
-            <div class="stat-value">90%</div>
-          </div>
-          <div class="stat-card">
-            <h4>Valutazione</h4>
-            <div class="stat-value">4.8/5</div>
-          </div>
-          <div class="stat-card">
-            <h4>Tasso di Risposta</h4>
-            <div class="stat-value">95%</div>
-          </div>
-        </section>
-      </main>
-    </div>
   </div>
-
-  <script src="../js/dashboard.js"></script>
+  <div class="main">
+    <header >
+      <div class="toggle-btn" id="toggleBtn">☰</div>
+      <h1>Benvenuto!</h1>
+    </header>
+    <section class="stats-cards">
+      <div class="card">
+        <h3>Guadagni</h3>
+        <p class="value">€2.450</p>
+      </div>
+      <div class="card">
+        <h3>Proposte</h3>
+        <p class="value">18</p>
+      </div>
+      <div class="card">
+        <h3>Messaggi</h3>
+        <p class="value">5 Nuovi</p>
+      </div>
+    </section>
+    <section class="projects">
+      <h2>I miei ultimi progetti</h2>
+      <div class="project-list">
+        <div class="project-card">
+          <h4>Logo Aziendale</h4>
+          <p>Completato il 20 Aprile</p>
+        </div>
+        <div class="project-card">
+          <h4>Sito Web Portfolio</h4>
+          <p>In corso</p>
+        </div>
+        <div class="project-card">
+          <h4>Campagna Social</h4>
+          <p>Pianificato</p>
+        </div>
+      </div>
+    </section>
+  </div>
 </body>
 </html>
