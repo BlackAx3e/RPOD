@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Crea Account Cliente - RPOD</title>
+  <link rel="stylesheet" href="../css/creaAccount.css" />
+</head>
+<body>
+	<main>
+		<h1 style="color: white; text-align: center; margin-bottom: 1em;">Crea Account <br> Cliente</h1>
+		<div class="login-card">
+			<form id="crea-account-clienti-form">
+			  <div class="form-group">
+				<label for="email">Email</label>
+				<input type="email" id="email" name="email" required placeholder="Es. esempio@dominio.com" />
+			  </div>
+			  <div class="form-group">
+				<label for="password">Password</label>
+				<input type="password" id="password" name="password" required placeholder="******" />
+			  </div>
+			  <div class="form-group">
+				<label for="confirmPassword">Conferma Password</label>
+				<input type="password" id="confirmPassword" name="confirmPassword" required placeholder="******" />
+			  </div>
+			  <button type="submit">Crea Account</button>
+			</form>
+		</div>
+  </main>
+  <script defer src="../js/creaAccountClienti.js"></script>
+</body>
+</html>

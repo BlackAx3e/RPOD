@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Profilo Cliente - RPOD</title>
+  <link rel="stylesheet" href="../css/profiloSetupClienti.css" />
+</head>
+<body>
+  <div class="setup-card">
+    <h1>Completa Profilo Cliente</h1>
+    <form id="setup-form-clienti">
+      <div class="form-group">
+        <label for="nome">Nome Completo</label>
+        <input type="text" id="nome" name="nome" required placeholder="Es. Mario Rossi"/>
+      </div>
+      <div class="form-group">
+        <label for="avatar">Foto Profilo</label>
+        <input type="file" id="avatar" name="avatar" accept="image/*" />
+      </div>
+      <button type="submit">Salva Profilo</button>
+    </form>
+  </div>
+  <script defer src="../js/profiloSetupClienti.js"></script>
+</body>
+</html>

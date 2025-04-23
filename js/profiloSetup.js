@@ -17,33 +17,38 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // Submit form
-  form.addEventListener('submit', (event) => {
+  form.addEventListener('submit', function(event) {
     event.preventDefault();
 
-    // Usa FormData per recuperare valori
-    const formData = new FormData(form);
-    const nome = formData.get('nome');
-    const profession = formData.get('profession');
-    const bio = formData.get('bio');
-    const file = formData.get('profilePicture');
+    // Prendo i campi
+    const nomeEl = document.getElementById('nome');
+    const professionEl = document.getElementById('profession');
+    const bioEl = document.getElementById('bio');
+    const priceEl = document.getElementById('priceRange');
 
-    // Validazione campi
-    if (!nome || !profession || !bio) {
-      alert('Per favore, compila tutti i campi.');
-      return;
-    }
-    if (!(file instanceof File) || file.size === 0) {
-      alert('Seleziona una foto del profilo.');
+    if (!nomeEl || !professionEl || !bioEl || !priceEl) {
+      console.error('Elementi del form mancanti');
       return;
     }
 
-    // Leggi immagine come base64 e salva
+    const nome = nomeEl.value;
+    const profession = professionEl.value;
+    const bio = bioEl.value;
+    const priceRange = priceEl.value;
+    const file = fileInput.files[0];
+
+    if (!file) {
+      alert('Seleziona una foto del profilo');
+      return;
+    }
+
     const reader = new FileReader();
-    reader.onload = () => {
+    reader.onload = function() {
       const user = JSON.parse(localStorage.getItem('user')) || {};
       user.nome = nome;
       user.profession = profession;
       user.bio = bio;
+      user.priceRange = priceRange;
       user.profilePicture = reader.result;
       user.profileCreated = true;
 
